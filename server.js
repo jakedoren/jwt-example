@@ -20,7 +20,6 @@ const posts = [
 
 app.get('/posts', authenticateToken, (req, res) => {
     const { name } = res.locals.token
-    // console.log(name)
     const filteredPosts = posts.filter(post => post.username === name)
     res.send(filteredPosts)
 })
@@ -59,5 +58,5 @@ function authenticateToken(req, res, next) {
 
 
 app.listen(3000, () => {
-    console.log('Server is running on 300')
+    console.log('Server is running on 3000')
 })
